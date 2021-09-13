@@ -85,6 +85,7 @@ Use the finalScore function below to do the following:
 
 function finalScore(inning, inningNum){
 
+  const totalScore = [];
   let homeScore = 0;
   let awayScore = 0;
   
