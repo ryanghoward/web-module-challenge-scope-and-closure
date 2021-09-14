@@ -59,7 +59,7 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
-  - Closure is when a function reaches beyond it's own scope to return a value. Closure only works up.
+  - Closure is when a function reaches beyond it's own scope to return a value. Closure only parent to child, never the other way around.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -85,6 +85,7 @@ a. Where is closure used in this code? How can you tell?
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
   - The first time dansRoll is called, the 'personalDice()' function in invoked and the 'function()' function generates a random number and then the 'personalDice' parameter and the random number generated are passed through the string literal and the console.log. Both times dansRoll() is called, everything executes except the random number generated will remain the same. The number supplied to the string literal will be the only thing that changes.
 c. What is the lexical scope of `newRoll`? 
+  - newRoll can only be accessed within the 'function()' function scope of the 'personalDice()' function
 
 
 ### Task 3 - Stretch Goals
@@ -95,11 +96,16 @@ See if you can complete one or more of the following challenges:
 
 1. Write a function that would allow you to do this using a closure. (This is another interview question we've seen before - when you're ready for answers, view an explanation [here](https://www.coderbyte.com/algorithm/3-common-javascript-closure-questions)).
 
-```js
+function createBase(baseNumber){
+  return function(N){
+    return baseNumber + N;
+  }
+}
+
 var addSix = createBase(6);
-addSix(10); // returns 16
-addSix(21); // returns 27
-```
+
+console.log(addSix(21));
+console.log(addSix(10));
 
 2. Research the differences between functional programming and object oriented programming. Then, describe the pros and cons of functional programming vs object-oriented programming. This is a common interview question and great practice!
 
