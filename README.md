@@ -59,6 +59,7 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+  - Closure is when a function reaches beyond it's own scope to return a value. Closure only works up.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -80,7 +81,9 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+  - Closure is used in the console.log when we pass in the "${name}" parameter from the "personalDice" function above it
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+  - The first time dansRoll is called, the 'personalDice()' function in invoked and the 'function()' function generates a random number and then the 'personalDice' parameter and the random number generated are passed through the string literal and the console.log. Both times dansRoll() is called, everything executes except the random number generated will remain the same. The number supplied to the string literal will be the only thing that changes.
 c. What is the lexical scope of `newRoll`? 
 
 
